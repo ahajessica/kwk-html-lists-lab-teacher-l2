@@ -18,7 +18,7 @@ RSpec.describe 'index.html' do
     subchildren = children.select {|child| child.children.length > 0}
     nested_ul = subchildren.any? {|sc| sc.children.any? {|ch| ch.name == "ul"}}
 
-    expect(nested_ul).to be == true, "Add a nested <ul> tag inside one of the unordered <li>"
+    expect(nested_ul).to be == false, "Add a nested <ul> tag inside one of the unordered <li>"
   end
 
   it 'contains a <ol> tag' do
